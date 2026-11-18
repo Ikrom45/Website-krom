@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmad Djalali Wal Ihkrom | Portfolio</title>
+  <meta name="description" content="Portfolio Dana Smith - UI/UX Designer & Web Developer">
+
+  <!-- Tandai bahwa JavaScript aktif (dipakai CSS untuk animasi reveal) -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Efek latar & indikator -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="bg-blobs" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#home" class="logo">Portfolio<span>.</span></a>
+
+      <nav class="menu" id="menu" aria-label="Menu utama">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Ganti tema terang/gelap">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+        <a href="#contact" class="btn btn-sm hide-sm">Hubungi Saya</a>
+        <button class="burger" id="burger" aria-label="Buka menu" aria-expanded="false" aria-controls="menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="hero-text" data-stagger>
+          <span class="pill reveal"><span class="dot"></span> Tersedia untuk proyek baru</span>
+
+          <!-- EDIT: sapaan & nama -->
+          <h2 class="hello reveal">Hello <span class="wave">👋</span>, I'm</h2>
+          <h1 class="name reveal">Ahmad Djalali Wal Ihkrom</h1>
+
+          <!-- EDIT: daftar profesi yang mengetik otomatis ada di script.js (CONFIG.roles) -->
+          <p class="role reveal">Saya seorang <span class="typed" id="typed"></span><span class="caret"></span></p>
+
+          <!-- EDIT: kalimat singkat tentang kamu -->
+          <p class="lead reveal">
+            Saya merancang pengalaman digital yang indah dan mudah dipakai, dari riset, wireframe,
+            hingga website yang hidup dan interaktif.
+          </p>
+
+          <div class="hero-cta reveal">
+            <a href="#projects" class="btn">Lihat Proyek <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#" class="btn btn-outline">Download CV <i class="fa-solid fa-cloud-arrow-down"></i></a>
+          </div>
+
+          <!-- EDIT: ganti # dengan link sosial media kamu -->
+          <div class="socials reveal">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/itsme_djalls?bqrl=dm0wY2gyYzZkamZv" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/ahmad-djalali-wal-ihkrom-7b6a61441/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+            <a href="#" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal reveal-right">
+          <div class="photo-wrap" id="tilt">
+            <span class="ring"></span>
+            <div class="purple-box"></div>
+            <!-- EDIT: ganti foto.png dengan fotomu (PNG transparan paling bagus) -->
+            <img src="krom1.png" alt="Foto Dana Smith"
+                 onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 300 420%22><circle cx=%22150%22 cy=%22110%22 r=%2268%22 fill=%22%23f1d3c2%22/><path d=%22M20 420c0-110 50-170 130-170s130 60 130 170z%22 fill=%22%231f2d5c%22/><path d=%22M95 90c0-60 110-60 110 0 10-20-10-70-55-70S85 70 95 90z%22 fill=%22%233a2418%22/></svg>'">
+
+            <div class="float-card c1">
+              <i class="fa-solid fa-star"></i>
+              <div><strong>1+ Tahun</strong><span>Pengalaman</span></div>
+            </div>
+            <div class="float-card c2">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>120+</strong><span>Proyek selesai</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="#about" class="scroll-down" aria-label="Scroll ke bawah"><span></span></a>
+    </section>
+
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <span>UI Design</span><span>UX Research</span><span>Web Development</span>
+        <span>Branding</span><span>IT Support</span><span>Design System</span><span>Troubleshoot Perangkat</span>
+      </div>
+    </div>
+
+    <!-- ================= STATS ================= -->
+    <section class="stats">
+      <div class="container stats-grid" data-stagger>
+        <!-- EDIT: ubah angka di data-target -->
+        <div class="stat card reveal"><h3><span class="count" data-target="5">0</span>+</h3><p>Tahun Pengalaman</p></div>
+        <div class="stat card reveal"><h3><span class="count" data-target="120">0</span>+</h3><p>Proyek Selesai</p></div>
+        <div class="stat card reveal"><h3><span class="count" data-target="45">0</span>+</h3><p>Klien Puas</p></div>
+        <div class="stat card reveal"><h3><span class="count" data-target="12">0</span></h3><p>Penghargaan</p></div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+
+        <div class="about-text" data-stagger>
+          <span class="eyebrow reveal">Tentang Saya</span>
+          <h2 class="title reveal">Mengubah ide menjadi <span class="grad-text">produk digital</span></h2>
+
+          <!-- EDIT: tulis perkenalanmu di sini -->
+          <p class="reveal">
+            [Tulis paragraf pertama tentang dirimu. Misalnya siapa kamu, apa yang kamu kerjakan,
+            dan apa yang membuatmu bersemangat di bidang ini.]
+          </p>
+          <p class="reveal">
+            [Tulis paragraf kedua. Misalnya pengalaman, cara kerja, atau hal yang kamu sukai di luar pekerjaan.]
+          </p>
+
+          <a href="#contact" class="btn reveal">Ayo Berkolaborasi <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- EDIT: data pribadi -->
+        <div class="info-cards" data-stagger>
+          <div class="info card reveal"><i class="fa-solid fa-user"></i><span>Nama</span><strong>Ahmad Djalali Wal Ihkrom</strong></div>
+          <div class="info card reveal"><i class="fa-solid fa-envelope"></i><span>Email</span><strong>ahmaddjalaliwalihkrom@gmail.com</strong></div>
+          <div class="info card reveal"><i class="fa-solid fa-location-dot"></i><span>Lokasi</span><strong>Jakarta, Indonesia</strong></div>
+          <div class="info card reveal"><i class="fa-solid fa-briefcase"></i><span>Pekerjaan saat ini</span><strong>IT Support</strong></div>
+          <div class="info card reveal"><i class="fa-solid fa-graduation-cap"></i><span>Pendidikan</span><strong>SMKN 7 Jakarta</strong></div>
+          <div class="info card reveal"><i class="fa-solid fa-language"></i><span>Bahasa</span><strong>Indonesia, English</strong></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="section alt" id="skills">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow reveal">Keahlian</span>
+          <h2 class="title reveal">Skill & <span class="grad-text">Tools</span></h2>
+        </div>
+
+        <div class="skills-grid">
+          <!-- EDIT: nama skill & persentase. Ubah angka di --level dan teks persennya. -->
+          <div class="bars card reveal">
+            <div class="skill" style="--level:92%">
+              <div class="skill-head"><span>UI / UX Design</span><span>92%</span></div>
+              <div class="bar"><span></span></div>
+            </div>
+            <div class="skill" style="--level:85%">
+              <div class="skill-head"><span>HTML & CSS</span><span>85%</span></div>
+              <div class="bar"><span></span></div>
+            </div>
+            <div class="skill" style="--level:75%">
+              <div class="skill-head"><span>JavaScript</span><span>75%</span></div>
+              <div class="bar"><span></span></div>
+            </div>
+            <div class="skill" style="--level:80%">
+              <div class="skill-head"><span>IT Support</span><span>80%</span></div>
+              <div class="bar"><span></span></div>
+            </div>
+            <div class="skill" style="--level:70%">
+              <div class="skill-head"><span>Troubleshoot Perangkat</span><span>70%</span></div>
+              <div class="bar"><span></span></div>
+            </div>
+          </div>
+
+          <div class="tools" data-stagger>
+            <div class="tool card reveal"><i class="fa-brands fa-figma"></i><span>Figma</span></div>
+            <div class="tool card reveal"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+            <div class="tool card reveal"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+            <div class="tool card reveal"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+            <div class="tool card reveal"><i class="fa-brands fa-react"></i><span>React</span></div>
+            <div class="tool card reveal"><i class="fa-brands fa-git-alt"></i><span>Git</span></div>
+            <div class="tool card reveal"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+            <div class="tool card reveal"><i class="fa-brands fa-sass"></i><span>Sass</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow reveal">Layanan</span>
+          <h2 class="title reveal">Apa yang bisa saya <span class="grad-text">bantu</span></h2>
+        </div>
+
+        <div class="services-grid" data-stagger>
+          <article class="service card reveal">
+            <div class="icon-box"><i class="fa-solid fa-pen-ruler"></i></div>
+            <h3>UI/UX Design</h3>
+            <p>Desain antarmuka dan pengalaman pengguna yang rapi, intuitif, dan berfokus pada kebutuhan pengguna.</p>
+            <a href="#contact" class="link">Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="service card reveal">
+            <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3>Web Development</h3>
+            <p>Website responsif dan cepat, dibangun dengan HTML, CSS, dan JavaScript modern.</p>
+            <a href="#contact" class="link">Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="service card reveal">
+            <div class="icon-box"><i class="fa-solid fa-palette"></i></div>
+            <h3>Branding</h3>
+            <p>Identitas visual yang konsisten: logo, palet warna, tipografi, hingga panduan merek.</p>
+            <a href="#contact" class="link">Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+          <article class="service card reveal">
+            <div class="icon-box"><i class="fa-solid fa-mobile-screen"></i></div>
+            <h3>Mobile App Design</h3>
+            <p>Desain aplikasi mobile yang nyaman dipakai di iOS maupun Android, siap diserahkan ke developer.</p>
+            <a href="#contact" class="link">Selengkapnya <i class="fa-solid fa-arrow-right"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="section alt" id="projects">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow reveal">Portfolio</span>
+          <h2 class="title reveal">Proyek <span class="grad-text">Pilihan</span></h2>
+        </div>
+
+        <div class="filters reveal" id="filters">
+          <button class="chip active" data-filter="all">Semua</button>
+          <button class="chip" data-filter="web">Web</button>
+          <button class="chip" data-filter="uiux">UI/UX</button>
+          <button class="chip" data-filter="mobile">Mobile</button>
+        </div>
+
+        <!-- EDIT: ini hanya contoh. Ganti judul, deskripsi, tag, dan link tiap proyek. -->
+        <div class="projects-grid" id="projectsGrid">
+
+          <article class="project card reveal" data-category="mobile">
+            <div class="thumb" style="--g1:#c84bf2;--g2:#7c5cff"><i class="fa-solid fa-mobile-screen-button"></i>
+              <div class="overlay"><a href="#" aria-label="Lihat proyek"><i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="#" aria-label="Kode"><i class="fa-brands fa-github"></i></a></div>
+            </div>
+            <div class="p-body">
+              <span class="cat">Mobile App</span>
+              <h3>Aplikasi Mobile Banking</h3>
+              <p>Desain aplikasi perbankan yang aman dan mudah dipahami.</p>
+              <div class="tags"><span>Figma</span><span>Prototype</span></div>
+            </div>
+          </article>
+
+          <article class="project card reveal" data-category="web">
+            <div class="thumb" style="--g1:#ff7eb3;--g2:#c84bf2"><i class="fa-solid fa-cart-shopping"></i>
+              <div class="overlay"><a href="#" aria-label="Lihat proyek"><i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="#" aria-label="Kode"><i class="fa-brands fa-github"></i></a></div>
+            </div>
+            <div class="p-body">
+              <span class="cat">Web</span>
+              <h3>Website E-Commerce</h3>
+              <p>Toko online responsif dengan keranjang dan filter produk.</p>
+              <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            </div>
+          </article>
+
+          <article class="project card reveal" data-category="uiux">
+            <div class="thumb" style="--g1:#7c5cff;--g2:#2dd4ff"><i class="fa-solid fa-chart-line"></i>
+              <div class="overlay"><a href="#" aria-label="Lihat proyek"><i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="#" aria-label="Kode"><i class="fa-brands fa-github"></i></a></div>
+            </div>
+            <div class="p-body">
+              <span class="cat">UI/UX</span>
+              <h3>Redesain Dashboard Analitik</h3>
+              <p>Penyederhanaan data kompleks menjadi tampilan yang jelas.</p>
+              <div class="tags"><span>Research</span><span>Figma</span></div>
+            </div>
+          </article>
+
+          <article class="project card reveal" data-category="web">
+            <div class="thumb" style="--g1:#f59e0b;--g2:#ef4444"><i class="fa-solid fa-rocket"></i>
+              <div class="overlay"><a href="#" aria-label="Lihat proyek"><i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="#" aria-label="Kode"><i class="fa-brands fa-github"></i></a></div>
+            </div>
+            <div class="p-body">
+              <span class="cat">Web</span>
+              <h3>Landing Page Startup</h3>
+              <p>Halaman pendaratan dengan animasi halus dan konversi tinggi.</p>
+              <div class="tags"><span>HTML</span><span>Animasi</span></div>
+            </div>
+          </article>
+
+          <article class="project card reveal" data-category="uiux">
+            <div class="thumb" style="--g1:#10b981;--g2:#2dd4ff"><i class="fa-solid fa-swatchbook"></i>
+              <div class="overlay"><a href="#" aria-label="Lihat proyek"><i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="#" aria-label="Kode"><i class="fa-brands fa-github"></i></a></div>
+            </div>
+            <div class="p-body">
+              <span class="cat">UI/UX</span>
+              <h3>Design System & Brand</h3>
+              <p>Kumpulan komponen dan panduan merek yang konsisten.</p>
+              <div class="tags"><span>Branding</span><span>Figma</span></div>
+            </div>
+          </article>
+
+          <article class="project card reveal" data-category="mobile">
+            <div class="thumb" style="--g1:#6366f1;--g2:#c84bf2"><i class="fa-solid fa-heart-pulse"></i>
+              <div class="overlay"><a href="#" aria-label="Lihat proyek"><i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="#" aria-label="Kode"><i class="fa-brands fa-github"></i></a></div>
+            </div>
+            <div class="p-body">
+              <span class="cat">Mobile App</span>
+              <h3>Aplikasi Kesehatan</h3>
+              <p>Pelacak kebiasaan sehat dengan visual yang memotivasi.</p>
+              <div class="tags"><span>UX</span><span>Mobile</span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESUME ================= -->
+    <section class="section" id="resume">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow reveal">Resume</span>
+          <h2 class="title reveal">Pengalaman & <span class="grad-text">Pendidikan</span></h2>
+        </div>
+
+        <div class="resume-grid">
+
+          <div>
+            <h3 class="col-title reveal"><i class="fa-solid fa-briefcase"></i> Pengalaman Kerja</h3>
+            <div class="timeline" data-stagger>
+              <!-- EDIT: tahun, posisi, perusahaan, deskripsi -->
+              <div class="t-item card reveal">
+                <span class="badge">2019 - Sekarang</span>
+                <h4>Senior UI/UX Designer</h4>
+                <em>Company Name</em>
+                <p>Memimpin desain produk dan mengelola design system lintas tim.</p>
+              </div>
+              <div class="t-item card reveal">
+                <span class="badge">2017 - 2019</span>
+                <h4>UI/UX Designer</h4>
+                <em>Company Name</em>
+                <p>Merancang antarmuka web dan mobile serta melakukan riset pengguna.</p>
+              </div>
+              <div class="t-item card reveal">
+                <span class="badge">2015 - 2017</span>
+                <h4>Junior Designer</h4>
+                <em>Company Name</em>
+                <p>Mendukung tim desain dalam pembuatan aset visual dan prototipe.</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="col-title reveal"><i class="fa-solid fa-graduation-cap"></i> Pendidikan</h3>
+            <div class="timeline" data-stagger>
+              <div class="t-item card reveal">
+                <span class="badge">2021 - 2022</span>
+                <h4>Sertifikasi UX Professional</h4>
+                <em>Nama Lembaga</em>
+                <p>Fokus pada riset pengguna, pengujian kegunaan, dan strategi produk.</p>
+              </div>
+              <div class="t-item card reveal">
+                <span class="badge">2011 - 2015</span>
+                <h4>S1 Desain Komunikasi Visual</h4>
+                <em>Nama Universitas</em>
+                <p>Mempelajari tipografi, layout, dan dasar desain interaktif.</p>
+              </div>
+              <div class="t-item card reveal">
+                <span class="badge">2008 - 2011</span>
+                <h4>SMA Jurusan IPA</h4>
+                <em>Nama Sekolah</em>
+                <p>Aktif di ekstrakurikuler multimedia dan desain.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section alt" id="contact">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow reveal">Kontak</span>
+          <h2 class="title reveal">Mari <span class="grad-text">Terhubung</span></h2>
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="contact-info" data-stagger>
+            <!-- EDIT: informasi kontak -->
+            <div class="c-item card reveal"><div class="icon-box sm"><i class="fa-solid fa-envelope"></i></div><div><span>Email</span><strong>dana@email.com</strong></div></div>
+            <div class="c-item card reveal"><div class="icon-box sm"><i class="fa-solid fa-phone"></i></div><div><span>Telepon</span><strong>+62 812 3456 7890</strong></div></div>
+            <div class="c-item card reveal"><div class="icon-box sm"><i class="fa-solid fa-location-dot"></i></div><div><span>Lokasi</span><strong>Jakarta, Indonesia</strong></div></div>
+
+            <div class="socials reveal">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Dribbble"><i class="fa-brands fa-dribbble"></i></a>
+              <a href="#" aria-label="Behance"><i class="fa-brands fa-behance"></i></a>
+            </div>
+          </div>
+
+          <form class="contact-form card reveal" id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">Nama</label>
+              <input type="text" id="name" name="name" placeholder="Nama lengkap" autocomplete="name">
+              <small class="error-msg"></small>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="email@contoh.com" autocomplete="email">
+              <small class="error-msg"></small>
+            </div>
+            <div class="field">
+              <label for="message">Pesan</label>
+              <textarea id="message" name="message" rows="5" placeholder="Ceritakan proyekmu..."></textarea>
+              <small class="error-msg"></small>
+            </div>
+            <button type="submit" class="btn full" id="submitBtn">
+              <span class="btn-label">Kirim Pesan</span> <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="logo">Portfolio<span>.</span></a>
+      <p>&copy; <span id="year"></span> Dana Smith. Dibuat dengan <i class="fa-solid fa-heart"></i> menggunakan HTML, CSS & JavaScript.</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
