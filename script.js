@@ -8,7 +8,7 @@
   /* ---------- CONFIG (silakan ubah) ---------- */
   const CONFIG = {
     // Teks yang mengetik otomatis di hero
-    roles: ['UI/UX Designer', 'Web Developer', 'IT Support', 'Problem Solver'],
+    roles: ['Network Engginer', 'AI Developer', 'IT Support', 'Problem Solver'],
     typeSpeed: 80,     // ms per huruf saat mengetik
     deleteSpeed: 45,   // ms per huruf saat menghapus
     pauseTime: 1600,   // jeda setelah satu kata selesai
